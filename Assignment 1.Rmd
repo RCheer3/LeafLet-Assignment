@@ -1,0 +1,27 @@
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+##Silicon Valley
+###February 20, 2017
+```{r warning = FALSE}
+library(leaflet)
+LatLong = data.frame(
+  lat = c(37.421949,37.484581,37.33182),
+  lng = c(-122.084773,-122.147921,-122.03118))
+
+SiliconValleySites = c(
+  "<a href 'http://www.google.com/'>Google HQ</a>",
+  "<a href = 'http://www.facebook.com/'> Facebook HQ",
+  "<a href = 'http://www.apple.com/'> Apple HQ"
+)
+
+LatLong %>%
+  leaflet()%>%
+  addTiles()%>%
+  addMarkers(popup = SiliconValleySites)
+
+```
